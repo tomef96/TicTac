@@ -5,25 +5,49 @@ class TicTacToe {
     val p1 = "X"
     val p2 = "O"
 
-    val positions = arrayOf("1","2","3","4","5","6","7","8","9")
+    val positions = arrayOf(
+        "0", "1", "2",
+        "3", "4", "5",
+        "6", "7", "8")
 
     private val winningCombinations = arrayOf(
-        arrayOf(1,2,3),
+        arrayOf(0,1,2),
+        arrayOf(3,4,5),
+        arrayOf(6,7,8),
+        arrayOf(0,3,6),
         arrayOf(1,4,7),
-        arrayOf(1,5,9),
         arrayOf(2,5,8),
-        arrayOf(3,5,7),
-        arrayOf(3,6,9),
-        arrayOf(4,5,6),
-        arrayOf(7,8,9)
+        arrayOf(0,4,8),
+        arrayOf(2,4,6)
     )
 
-    var gameWon = false
+    var gameOver = false
+
     var winner = ""
 
-    fun chooseOne(player: String, position: Int) {
-        if (positions[position-1] != "X" && positions[position-1] != "O") {
-            positions[position-1] = player
+    var aiMode = false
+
+    var moveCount = 0
+
+    fun move(player: String, position: Int) {
+        if (positions[position] != "X" && positions[position] != "O") {
+            positions[position] = player
+            checkIfWon(player)
+            moveCount++
+            if (moveCount > 8) {
+                gameOver = true
+            }
+            else if (aiMode) {
+                while (true) {
+                    val index = positions.random()
+                    if (index != "X" && index != "O") {
+                        positions[index.toInt()] = "O"
+                        checkIfWon(p2)
+                        moveCount++
+                        break
+                    }
+                }
+            }
         }
     }
 
@@ -31,15 +55,24 @@ class TicTacToe {
         var result = false
         for (combination in winningCombinations) {
             for (position in combination) {
-                result = positions[position-1] == player
+                result = positions[position] == player
                 if (!result) break
             }
             if (result) {
-                gameWon = true
+                gameOver = true
                 winner = player
                 break
             }
         }
     }
 
+    private fun isBoardFull() {
+        for (index in positions) {
+            gameOver = !(index != "X" && index != "O")
+        }
+    }
+
+    private fun isPositionTaken(position: String): Boolean {
+        return position != "X" && position != "O"
+    }
 }
