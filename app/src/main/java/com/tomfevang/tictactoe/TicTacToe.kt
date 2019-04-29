@@ -1,6 +1,6 @@
 package com.tomfevang.tictactoe
 
-class TicTacToe {
+class TicTacToe(val aiMode: Boolean, val playerX: String, val playerO: String?) {
 
     val p1 = "X"
     val p2 = "O"
@@ -25,14 +25,13 @@ class TicTacToe {
 
     var winner = ""
 
-    var aiMode = false
-
     var moveCount = 0
 
     fun move(player: String, position: Int) {
         if (positions[position] != "X" && positions[position] != "O") {
             positions[position] = player
             checkIfWon(player)
+            if (gameOver) return
             moveCount++
             if (moveCount > 8) {
                 gameOver = true
@@ -60,7 +59,8 @@ class TicTacToe {
             }
             if (result) {
                 gameOver = true
-                winner = player
+                if (player == "X") winner = playerX
+                if (player == "O") winner = playerO?: "TTTBot"
                 break
             }
         }
