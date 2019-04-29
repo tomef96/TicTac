@@ -1,4 +1,4 @@
-package com.tomfevang.tictactoe.data
+package com.example.tictactoe.data
 
 import android.content.Context
 import androidx.room.Database

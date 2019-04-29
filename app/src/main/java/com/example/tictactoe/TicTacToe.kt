@@ -1,4 +1,4 @@
-package com.tomfevang.tictactoe
+package com.example.tictactoe
 
 class TicTacToe(val aiMode: Boolean, val playerX: String, val playerO: String?) {
 

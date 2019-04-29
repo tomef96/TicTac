@@ -1,4 +1,4 @@
-package com.tomfevang.tictactoe
+package com.example.tictactoe
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

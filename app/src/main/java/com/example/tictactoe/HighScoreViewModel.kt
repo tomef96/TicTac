@@ -1,10 +1,10 @@
-package com.tomfevang.tictactoe
+package com.example.tictactoe
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.tomfevang.tictactoe.data.AppDatabase
-import com.tomfevang.tictactoe.data.HighScore
-import com.tomfevang.tictactoe.data.HighScoreRepository
+import com.example.tictactoe.data.AppDatabase
+import com.example.tictactoe.data.HighScore
+import com.example.tictactoe.data.HighScoreRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

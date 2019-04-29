@@ -1,4 +1,4 @@
-package com.tomfevang.tictactoe
+package com.example.tictactoe
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.tomfevang.tictactoe.data.HighScore
+import com.example.tictactoe.data.HighScore
 
 class HighScoreListAdapter internal constructor(context: Context) :
     RecyclerView.Adapter<HighScoreListAdapter.HighScoreViewHolder>() {

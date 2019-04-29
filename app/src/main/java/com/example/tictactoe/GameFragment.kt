@@ -1,4 +1,4 @@
-package com.tomfevang.tictactoe
+package com.example.tictactoe
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.tomfevang.tictactoe.data.HighScore
+import com.example.tictactoe.data.HighScore
 
 
 private const val ARG_AI_MODE = "aiMode"

@@ -1,4 +1,4 @@
-package com.tomfevang.tictactoe
+package com.example.tictactoe
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

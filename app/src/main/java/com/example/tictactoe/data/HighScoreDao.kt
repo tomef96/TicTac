@@ -1,4 +1,4 @@
-package com.tomfevang.tictactoe.data
+package com.example.tictactoe.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
